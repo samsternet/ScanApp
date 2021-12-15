@@ -1,34 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/Background"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/title"
+        android:id="@+id/TitleTxt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Alarms"
         style="@style/Title_1" />
 
     <ScrollView
+        android:id="@+id/AlarmContainer"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="150dp" >
+        android:layout_height="match_parent" >
 
         <LinearLayout
+            android:id="@+id/AlarmListContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical" >
+
+            <fragment
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:layout="@layout/fragment_alarm" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="No alarms yet, click the button to add an alarm"
-                style="@style/Hint" />
+                style="@style/Hint_1" />
         </LinearLayout>
     </ScrollView>
 
@@ -43,4 +50,4 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@android:drawable/ic_input_add" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
